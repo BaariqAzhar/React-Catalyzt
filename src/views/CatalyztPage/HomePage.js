@@ -29,6 +29,8 @@ import NavbarSection from "./NavbarSection"
 import DiscoverSection from "./DiscoverSection"
 import Aboutus from './AboutusSection'
 import Advertisement from './AdvertisementSection'
+import FooterSection from './FooterSection'
+
 import ProductSection from "../LandingPage/Sections/ProductSection";
 import TeamSection from "../LandingPage/Sections/TeamSection.js";
 import WorkSection from "../LandingPage/Sections/WorkSection.js";
@@ -64,14 +66,9 @@ export default function LandingPage(props) {
           <DiscoverSection />
           <Aboutus />
           <Advertisement />
-
-
-          <ProductSection />
-          <TeamSection />
-          <WorkSection />
         </div>
       </div>
-      <Footer />
+      <FooterSection/>
     </div>
   );
 }

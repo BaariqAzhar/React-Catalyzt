@@ -10,6 +10,9 @@ import VerifiedUser from "@material-ui/icons/VerifiedUser";
 import Fingerprint from "@material-ui/icons/Fingerprint";
 import InfoArea from "components/InfoArea/InfoArea.js";
 import { Link } from '@material-ui/core';
+import TrendingUpIcon from '@material-ui/icons/TrendingUp';
+import FlashOnIcon from '@material-ui/icons/FlashOn';
+import WbIncandescentIcon from '@material-ui/icons/WbIncandescent';
 
 const useStyles = makeStyles(styles)
 
@@ -48,7 +51,7 @@ export default function Aboutus() {
                     <InfoArea
                         title="Impactful"
                         description="The ability to change perspective and behavior also create useful solution for environment"
-                        icon={Chat}
+                        icon={TrendingUpIcon}
                         iconColor="info"
                         vertical
                     />
@@ -59,7 +62,7 @@ export default function Aboutus() {
                         description="
                         Innovative
                         the ability to address complex adaptive problems, while productively and creatively delivering products of the highest possible value"
-                        icon={VerifiedUser}
+                        icon={WbIncandescentIcon}
                         iconColor="success"
                         vertical
                     />
@@ -68,7 +71,7 @@ export default function Aboutus() {
                     <InfoArea
                         title="Fast-Growth"
                         description="The ability to adapt in rapid environmental transformation through increasing the youth’s curiosity and self-driven initiative"
-                        icon={Fingerprint}
+                        icon={FlashOnIcon}
                         iconColor="danger"
                         vertical
                     />
