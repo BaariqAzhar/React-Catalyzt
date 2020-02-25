@@ -15,6 +15,7 @@ import ExploreIcon from "@material-ui/icons/Explore";
 import BusinessIcon from '@material-ui/icons/Business';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 import ReceiptIcon from '@material-ui/icons/Receipt';
+import { Router, Route, Switch, Link } from "react-router-dom";
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -30,86 +31,94 @@ import styles from "assets/jss/material-kit-react/views/componentsSections/navba
 
 const useStyles = makeStyles(styles);
 
-export default function NavbarSection() {
+export default function NavbarSection(props) {
   const classes = useStyles();
+  // let activePage = props.activePage;
+  // let implementPage;
+  // if (activePage){
+  //   switch(activePage){
+  //     case 'home':
+  //       implementPage = 
+  //       break;
+  //     case 'dicover':
+  //       break;
+  //   }
+  // }
   return (
     <div>
-    {/* <div className={classes.section}> */}
+      {/* <div className={classes.section}> */}
       <div id="navbar" className={classes.navbar}>
         {/* <div
           className={classes.navigation}
         // style={{ backgroundImage: "url(" + image + ")" }}
         > */}
-          <Header
-            brand="Catalyzt"
-            color="transparent"
-            fixed
-            rightLinks={
-              <List className={classes.list}>
-                <ListItem className={classes.listItem}>
-                  <Button
-                    href="#pablo"
-                    className={classes.navLink + " " + classes.navLinkActive}
-                    onClick={e => e.preventDefault()}
-                    color="transparent"
-                  >
-                    <HomeIcon className={classes.icons} /> Home
+        <Header
+          brand={<img align="left" style={{ width: "50%" }} src={require('./../../assets/img/catalyzt/logo-txt.png')} />}
+          color={props.navColor}
+          fixed
+          rightLinks={
+            <List className={classes.list}>
+              <ListItem className={classes.listItem}>
+                <Link to="/"
+                  className={classes.navLink + " " + classes.navLinkActive}
+                  color="transparent">
+                  <HomeIcon className={classes.icons} /> Home
+                </Link>
+              </ListItem>
+              <ListItem className={classes.listItem}>
+                <Button
+                  href="#pablo"
+                  className={classes.navLink}
+                  onClick={e => e.preventDefault()}
+                  color="transparent"
+                >
+                  <EventIcon className={classes.icons} /> Event
                   </Button>
-                </ListItem>
-                <ListItem className={classes.listItem}>
-                  <Button
-                    href="#pablo"
-                    className={classes.navLink}
-                    onClick={e => e.preventDefault()}
-                    color="transparent"
-                  >
-                    <EventIcon className={classes.icons} /> Event
+              </ListItem>
+              <ListItem className={classes.listItem}>
+                <Button
+                  href="#pablo"
+                  className={classes.navLink}
+                  onClick={e => e.preventDefault()}
+                  color="transparent"
+                >
+                  <ExploreIcon className={classes.icons} /> Discover
                   </Button>
-                </ListItem>
-                <ListItem className={classes.listItem}>
-                  <Button
-                    href="#pablo"
-                    className={classes.navLink}
-                    onClick={e => e.preventDefault()}
-                    color="transparent"
-                  >
-                    <ExploreIcon className={classes.icons} /> Discover
+              </ListItem>
+              <ListItem className={classes.listItem}>
+                <Button
+                  href="#pablo"
+                  className={classes.navLink}
+                  onClick={e => e.preventDefault()}
+                  color="transparent"
+                >
+                  <BusinessIcon className={classes.icons} /> About us
                   </Button>
-                </ListItem>
-                <ListItem className={classes.listItem}>
-                  <Button
-                    href="#pablo"
-                    className={classes.navLink}
-                    onClick={e => e.preventDefault()}
-                    color="transparent"
-                  >
-                    <BusinessIcon className={classes.icons} /> About us
+              </ListItem>
+              <ListItem className={classes.listItem}>
+                <Button
+                  href="#pablo"
+                  className={classes.navLink}
+                  onClick={e => e.preventDefault()}
+                  color="transparent"
+                >
+                  <SupervisorAccountIcon className={classes.icons} /> Testimonials
                   </Button>
-                </ListItem>
-                <ListItem className={classes.listItem}>
-                  <Button
-                    href="#pablo"
-                    className={classes.navLink}
-                    onClick={e => e.preventDefault()}
-                    color="transparent"
-                  >
-                    <SupervisorAccountIcon className={classes.icons} /> Testimonials
+              </ListItem>
+              <ListItem className={classes.listItem}>
+                <Button
+                  href="#pablo"
+                  className={classes.navLink}
+                  onClick={e => e.preventDefault()}
+                  color="transparent"
+                >
+                  <ReceiptIcon className={classes.icons} /> Advertisement
                   </Button>
-                </ListItem>
-                <ListItem className={classes.listItem}>
-                  <Button
-                    href="#pablo"
-                    className={classes.navLink}
-                    onClick={e => e.preventDefault()}
-                    color="transparent"
-                  >
-                    <ReceiptIcon className={classes.icons} /> Advertisement
-                  </Button>
-                </ListItem>
-              </List>
-            }
-          />
-        </div>
+              </ListItem>
+            </List>
+          }
+        />
+      </div>
       {/* </div> */}
     </div>
   );

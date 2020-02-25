@@ -38,7 +38,7 @@ export default function Aboutus() {
                 </GridItem>
                 <GridItem xs={8} sm={8} md={6}>
                     <img
-                    align="left"
+                        align="left"
                         src={logo}
                         alt="..."
                         className={classes.imgRoundedCircle}
@@ -52,7 +52,7 @@ export default function Aboutus() {
                         title="Impactful"
                         description="The ability to change perspective and behavior also create useful solution for environment"
                         icon={TrendingUpIcon}
-                        iconColor="info"
+                        iconColor="success"
                         vertical
                     />
                 </GridItem>
@@ -63,7 +63,7 @@ export default function Aboutus() {
                         Innovative
                         the ability to address complex adaptive problems, while productively and creatively delivering products of the highest possible value"
                         icon={WbIncandescentIcon}
-                        iconColor="success"
+                        iconColor="danger"
                         vertical
                     />
                 </GridItem>
@@ -72,7 +72,7 @@ export default function Aboutus() {
                         title="Fast-Growth"
                         description="The ability to adapt in rapid environmental transformation through increasing the youth’s curiosity and self-driven initiative"
                         icon={FlashOnIcon}
-                        iconColor="danger"
+                        iconColor="info"
                         vertical
                     />
                 </GridItem>

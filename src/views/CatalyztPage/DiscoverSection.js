@@ -23,15 +23,79 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 import image1 from "assets/img/examples/olu-eletu.jpg";
-import { Link } from "@material-ui/core";
+import { Router, Route, Switch, Link } from "react-router-dom";
+// import { Link } from "@material-ui/core";
 
+import slide1 from 'assets/img/catalyzt/discover-slide/I Want To Be/1.png'
+
+//modal
+// import modalStyle from "assets/jss/material-dashboard-pro-react/modalStyle.js";
+import Slide from "@material-ui/core/Slide";
+import Dialog from "@material-ui/core/Dialog";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogActions from "@material-ui/core/DialogActions";
+import IconButton from "@material-ui/core/IconButton";
+// @material-ui/icons
+import Close from "@material-ui/icons/Close";
+
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Slide direction="down" ref={ref} {...props} />;
+});
 
 const useStyles = makeStyles(styles);
 
 export default function DiscoverSection() {
+    const [modal, setModal] = React.useState(false);
+
     const classes = useStyles();
     return (
         <div className={classes.section}>
+            <Dialog
+                classes={{
+                    root: classes.center,
+                    paper: classes.modal
+                }}
+                open={modal}
+                TransitionComponent={Transition}
+                keepMounted
+                onClose={() => setModal(false)}
+                aria-labelledby="modal-slide-title"
+                aria-describedby="modal-slide-description"
+            >
+                <DialogTitle
+                    id="classic-modal-slide-title"
+                    disableTypography
+                    className={classes.modalHeader}
+                >
+                    <IconButton
+                        className={classes.modalCloseButton}
+                        key="close"
+                        aria-label="Close"
+                        color="inherit"
+                        onClick={() => setModal(false)}
+                    >
+                        <Close className={classes.modalClose} />
+                    </IconButton>
+                    <h4 className={classes.modalTitle}>Modal title</h4>
+                </DialogTitle>
+                <DialogContent
+                    id="modal-slide-description"
+                    className={classes.modalBody}
+                >
+                    <h5>Are you sure you want to do this?</h5>
+                </DialogContent>
+                <DialogActions
+                    className={classes.modalFooter + " " + classes.modalFooterCenter}
+                >
+                    <Button onClick={() => setModal(false)}>Never Mind</Button>
+                    <Button onClick={() => setModal(false)} color="success">
+                        Yes
+                    </Button>
+                </DialogActions>
+            </Dialog>
+
             <GridContainer justify="center">
                 <GridItem xs={12} sm={12} md={8}>
                     <h2 className={classes.title}>Discover</h2>
@@ -54,7 +118,7 @@ export default function DiscoverSection() {
                         <Card>
                             <CardActionArea>
                                 <CardBody>
-                                    <div href="#">
+                                    <Link to='/discover-page'>
                                         <InfoArea
                                             title="The Importance of Soft Skills"
                                             description="In the modern workplace, you need more than technical skills to be successful in your career. Today’s employers seek candidates who can perform their jobs well but who can also fit into the company culture and interact with other employees ....."
@@ -62,7 +126,7 @@ export default function DiscoverSection() {
                                             iconColor="success"
                                             vertical
                                         />
-                                    </div>
+                                    </Link>
                                 </CardBody>
                             </CardActionArea>
                         </Card>
@@ -75,6 +139,26 @@ export default function DiscoverSection() {
                             iconColor="danger"
                             vertical
                         /> */}
+                    </GridItem>
+                </GridContainer>
+                <GridContainer>
+                    <GridItem xs={12} sm={12} md={4}>
+                    </GridItem>
+                    <GridItem xs={12} sm={12} md={4}>
+                        <CardActionArea>
+                            {/* <img
+                                src={slide1}
+                                style={{ width: "100%" }}
+                            /> */}
+                            <Button color="rose" round onClick={() => setModal(true)}>
+                                <img
+                                    src={slide1}
+                                    style={{ width: "100%" }}
+                                />
+                            </Button>
+                        </CardActionArea>
+                    </GridItem>
+                    <GridItem xs={12} sm={12} md={4}>
                     </GridItem>
                 </GridContainer>
             </div>

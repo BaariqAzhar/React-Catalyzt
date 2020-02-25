@@ -44,17 +44,14 @@ export default function LandingPage(props) {
   const { ...rest } = props;
   return (
     <div>
-      <NavbarSection />
-      <Parallax filter image={require("assets/img/landing-bg.jpg")}>
+      <NavbarSection navColor="transparent"/>
+      <Parallax filter image={require("assets/img/catalyzt/bg-1.jpg")}>
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
-              <h1 className={classes.title}>Your Story Starts With Us.</h1>
+              <h1 className={classes.title}>Catalyzt</h1>
               <h4>
-                Every landing page needs a small description after the big bold
-                title, that{"'"}s why we added this text here. Add here all the
-                information that can make you or your product create the first
-                impression.
+              The largest young generation media-platform focused on improving and developing their skill-sets for industrial needs with information, network, and overseas opportunities
               </h4>
               <br />
             </GridItem>
